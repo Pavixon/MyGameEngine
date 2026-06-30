@@ -1,16 +1,18 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "GameObject.h"
 
 class Engine
 {
 public:
 	Engine();
-	void run();
+	void Run();
 
 private:
-	void processEvents();
-	void update(float deltaTime);
-	void render();
+	void ProcessEvents();
+	void Update(float deltaTime);
+	void Render();
 
 	sf::RenderWindow window;
+	GameObject testObject;
 };

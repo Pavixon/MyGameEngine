@@ -6,7 +6,7 @@ Engine::Engine()
 
 }
 
-void Engine::run()
+void Engine::Run()
 {
 	sf::Clock clock;
 
@@ -14,13 +14,13 @@ void Engine::run()
 	{
 		float deltaTime = clock.restart().asSeconds();
 
-		processEvents();
-		update(deltaTime);
-		render();
+		ProcessEvents();
+		Update(deltaTime);
+		Render();
 	}
 }
 
-void Engine::processEvents()
+void Engine::ProcessEvents()
 {
 
 	while (const std::optional event = window.pollEvent())
@@ -32,16 +32,16 @@ void Engine::processEvents()
 	}
 }
 
-void Engine::update(float deltaTime)
+void Engine::Update(float deltaTime)
 {
-	//Logic of the game
+	testObject.Update(deltaTime);
 }
 
-void Engine::render()
+void Engine::Render()
 {
 	window.clear(sf::Color::Black);
 
-	//Rendering of objects
+	testObject.Draw(window);
 
 	window.display();
 }
