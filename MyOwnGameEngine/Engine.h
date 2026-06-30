@@ -1,6 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "GameObject.h"
+#include "GameObjectManager.h"
 
 class Engine
 {
@@ -14,5 +14,5 @@ private:
 	void Render();
 
 	sf::RenderWindow window;
-	GameObject testObject;
+	GameObjectManager objectMenager;
 };

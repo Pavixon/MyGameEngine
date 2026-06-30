@@ -1,0 +1,18 @@
+#pragma once
+
+#include <vector>
+#include <memory>
+#include <SFML/Graphics.hpp>
+#include "GameObject.h"
+
+class GameObjectManager
+{
+public:
+	void AddObject(std::shared_ptr<GameObject> object);
+
+	void Update(float deltaTime);
+	void Draw(sf::RenderWindow& window);
+
+private:
+	std::vector<std::shared_ptr<GameObject>> objects;
+};

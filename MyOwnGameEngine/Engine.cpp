@@ -1,9 +1,13 @@
 #include "Engine.h"
+#include <memory>
 
 Engine::Engine()
 	: window(sf::VideoMode({ 1280, 720 }), "Silnik 2D")
 {
+	auto testObject = std::make_shared<GameObject>();
+	testObject->SetPosition(100.f, 100.f);
 
+	objectMenager.AddObject(testObject);
 }
 
 void Engine::Run()
@@ -34,14 +38,14 @@ void Engine::ProcessEvents()
 
 void Engine::Update(float deltaTime)
 {
-	testObject.Update(deltaTime);
+	objectMenager.Update(deltaTime);
 }
 
 void Engine::Render()
 {
 	window.clear(sf::Color::Black);
 
-	testObject.Draw(window);
+	objectMenager.Draw(window);
 
 	window.display();
 }
