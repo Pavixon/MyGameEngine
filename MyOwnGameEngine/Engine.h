@@ -1,11 +1,8 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include <vector>
-#include "GameObjectManager.h"
+#include <memory>
 #include "ResourceManager.h"
-#include "Player.h"
-#include "Wall.h"
-#include "Enemy.h"
+#include "Scene.h"
 
 
 class Engine
@@ -20,10 +17,6 @@ private:
 	void Render();
 
 	sf::RenderWindow window;
-	GameObjectManager objectManager;
 	ResourceManager resourceManager;
-
-	std::shared_ptr<Player> player;
-	std::vector<std::shared_ptr<Wall>> walls;
-	std::shared_ptr<Enemy> enemy;
+	std::unique_ptr<Scene> currentScene;
 };
