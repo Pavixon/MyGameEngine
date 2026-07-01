@@ -4,7 +4,7 @@
 Engine::Engine()
 	: window(sf::VideoMode({ 1280, 720 }), "MyOwnGameEngine")
 {
-	currentScene = std::make_unique<GameScene>();
+	sceneManager.SetScene(std::make_unique<GameScene>());
 }
 
 void Engine::Run()
@@ -35,14 +35,14 @@ void Engine::ProcessEvents()
 
 void Engine::Update(float deltaTime)
 {
-	currentScene->Update(deltaTime);
+	sceneManager.Update(deltaTime);
 }
 
 void Engine::Render()
 {
 	window.clear(sf::Color::Black);
 
-	currentScene->Draw(window);
+	sceneManager.Draw(window);
 
 	window.display();
 }

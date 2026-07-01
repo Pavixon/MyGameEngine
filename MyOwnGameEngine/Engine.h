@@ -3,6 +3,7 @@
 #include <memory>
 #include "ResourceManager.h"
 #include "Scene.h"
+#include "SceneManager.h"
 
 
 class Engine
@@ -18,5 +19,5 @@ private:
 
 	sf::RenderWindow window;
 	ResourceManager resourceManager;
-	std::unique_ptr<Scene> currentScene;
+	SceneManager sceneManager;
 };
