@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <vector>
 #include "GameObjectManager.h"
 #include "ResourceManager.h"
 #include "Player.h"
@@ -21,5 +22,5 @@ private:
 	ResourceManager resourceManager;
 
 	std::shared_ptr<Player> player;
-	std::shared_ptr<Wall> wall;
+	std::vector<std::shared_ptr<Wall>> walls;
 };

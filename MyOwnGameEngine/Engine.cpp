@@ -10,11 +10,25 @@ Engine::Engine()
 	player = std::make_shared<Player>();
 	objectManager.AddObject(player);
 
-	wall = std::make_shared<Wall>(
+	walls.push_back(std::make_shared<Wall>(
 		sf::Vector2f(300.f, 200.f),
 		sf::Vector2f(200.f, 50.f)
-	);
-	objectManager.AddObject(wall);
+	));
+
+	walls.push_back(std::make_shared<Wall>(
+		sf::Vector2f(500.f, 400.f),
+		sf::Vector2f(200.f, 50.f)
+	));
+
+	walls.push_back(std::make_shared<Wall>(
+		sf::Vector2f(100.f, 500.f),
+		sf::Vector2f(400.f, 50.f)
+	));
+
+	for (auto& wall : walls)
+	{
+		objectManager.AddObject(wall);
+	}
 }
 
 void Engine::Run()
@@ -47,9 +61,13 @@ void Engine::Update(float deltaTime)
 {
 	objectManager.Update(deltaTime);
 
-	if (CollisionManager::CheckCollision(*player, *wall))
+	for (auto& wall : walls)
 	{
-		player->UndoMove();
+		if (CollisionManager::CheckCollision(*player, *wall))
+		{
+			player->UndoMove();
+			break;
+		}
 	}
 }
 
