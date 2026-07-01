@@ -5,6 +5,8 @@
 #include "ResourceManager.h"
 #include "Player.h"
 #include "Wall.h"
+#include "Enemy.h"
+
 
 class Engine
 {
@@ -23,4 +25,5 @@ private:
 
 	std::shared_ptr<Player> player;
 	std::vector<std::shared_ptr<Wall>> walls;
+	std::shared_ptr<Enemy> enemy;
 };

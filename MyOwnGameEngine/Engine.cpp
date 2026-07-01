@@ -7,9 +7,11 @@
 Engine::Engine()
 	: window(sf::VideoMode({ 1280, 720 }), "Silnik 2D")
 {
+	//Adding Player
 	player = std::make_shared<Player>();
 	objectManager.AddObject(player);
 
+	//Adding Walls
 	walls.push_back(std::make_shared<Wall>(
 		sf::Vector2f(300.f, 200.f),
 		sf::Vector2f(200.f, 50.f)
@@ -29,6 +31,10 @@ Engine::Engine()
 	{
 		objectManager.AddObject(wall);
 	}
+
+	//Adding Enemy
+	enemy = std::make_shared<Enemy>(sf::Vector2f(700.f, 300.f));
+	objectManager.AddObject(enemy);
 }
 
 void Engine::Run()
