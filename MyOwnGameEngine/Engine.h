@@ -1,6 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "GameObjectManager.h"
+#include "ResourceManager.h"
 
 class Engine
 {
@@ -14,5 +15,6 @@ private:
 	void Render();
 
 	sf::RenderWindow window;
-	GameObjectManager objectMenager;
+	GameObjectManager objectManager;
+	ResourceManager resourceManager;
 };

@@ -4,8 +4,10 @@
 Engine::Engine()
 	: window(sf::VideoMode({ 1280, 720 }), "Silnik 2D")
 {
+	resourceManager.LoadTexture("player", "Assets/player.png");
+
 	auto player = std::make_shared<Player>();
-	objectMenager.AddObject(player);
+	objectManager.AddObject(player);
 }
 
 void Engine::Run()
@@ -36,14 +38,14 @@ void Engine::ProcessEvents()
 
 void Engine::Update(float deltaTime)
 {
-	objectMenager.Update(deltaTime);
+	objectManager.Update(deltaTime);
 }
 
 void Engine::Render()
 {
 	window.clear(sf::Color::Black);
 
-	objectMenager.Draw(window);
+	objectManager.Draw(window);
 
 	window.display();
 }
