@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Wall.h"
+#include "CameraManager.h"
 #include <memory>
 #include <vector>
 
@@ -18,6 +19,7 @@ public:
 
 private:
 	GameObjectManager objectManager;
+	CameraManager cameraManager;
 
 	std::shared_ptr<Player> player;
 	std::shared_ptr<Enemy> enemy;

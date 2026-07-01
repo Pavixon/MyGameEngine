@@ -2,6 +2,7 @@
 #include "CollisionManager.h"
 
 GameScene::GameScene()
+	:cameraManager(sf::Vector2f(1280.f, 720.f))
 {
 	player = std::make_shared<Player>();
 	objectManager.AddObject(player);
@@ -38,9 +39,12 @@ void GameScene::Update(float deltaTime)
 			break;
 		}
 	}
+
+	cameraManager.Follow(player->GetPosition());
 }
 
 void GameScene::Draw(sf::RenderWindow& window)
 {
+	cameraManager.Apply(window);
 	objectManager.Draw(window);
 }
