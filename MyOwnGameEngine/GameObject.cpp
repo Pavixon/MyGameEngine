@@ -36,6 +36,11 @@ sf::Vector2f GameObject::GetSize() const
 	return shape.getSize();
 }
 
+sf::FloatRect GameObject::GetBounds() const
+{
+	return shape.getGlobalBounds();
+}
+
 void GameObject::SetActive(bool active)
 {
 	this->active = active;

@@ -2,7 +2,8 @@
 #include "InputManager.h"
 
 Player::Player()
-	: speed(200.f)
+	: speed(200.f),
+	  previousPosition(0.f, 0.f)
 {
 	shape.setSize(sf::Vector2f(50.f, 50.f));
 	shape.setFillColor(sf::Color::Green);
@@ -11,6 +12,8 @@ Player::Player()
 
 void Player::Update(float deltaTime)
 {
+	previousPosition = shape.getPosition();
+
 	sf::Vector2f movement(0.f, 0.f);
 
 	if (InputManager::IsKeyPressed(sf::Keyboard::Key::W))
@@ -31,4 +34,9 @@ void Player::Update(float deltaTime)
 	}
 
 	shape.move(movement);
+}
+
+void Player::UndoMove()
+{
+	shape.setPosition(previousPosition);
 }

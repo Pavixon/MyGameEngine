@@ -2,6 +2,8 @@
 #include <SFML/Graphics.hpp>
 #include "GameObjectManager.h"
 #include "ResourceManager.h"
+#include "Player.h"
+#include "Wall.h"
 
 class Engine
 {
@@ -17,4 +19,7 @@ private:
 	sf::RenderWindow window;
 	GameObjectManager objectManager;
 	ResourceManager resourceManager;
+
+	std::shared_ptr<Player> player;
+	std::shared_ptr<Wall> wall;
 };

@@ -17,6 +17,8 @@ public:
 	void SetSize(const sf::Vector2f& size);
 	sf::Vector2f GetSize() const;
 
+	sf::FloatRect GetBounds() const;
+
 	void SetActive(bool active);
 	bool IsActive() const;
 
