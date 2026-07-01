@@ -9,7 +9,10 @@ void GameObjectManager::Update(float deltaTime)
 {
 	for (auto& object : objects)
 	{
-		object->Update(deltaTime);
+		if (object->IsActive())
+		{
+			object->Update(deltaTime);
+		}
 	}
 }
 

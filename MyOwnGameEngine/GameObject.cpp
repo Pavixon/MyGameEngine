@@ -1,28 +1,47 @@
 #include "GameObject.h"
 
 GameObject::GameObject()
+	:active(true)
 {
-	shape.setSize(sf::Vector2(50.f, 50.f));
+	shape.setSize(sf::Vector2f(50.f, 50.f));
 	shape.setFillColor(sf::Color::White);
-	shape.setPosition(sf::Vector2(100.f, 100.f));
-}
-
-void GameObject::Update(float deltaTime)
-{
-	//object by default do nothing
+	shape.setPosition(sf::Vector2f(0.f, 0.f));
 }
 
 void GameObject::Draw(sf::RenderWindow& window)
 {
-	window.draw(shape);
+	if (active)
+	{
+		window.draw(shape);
+	}
 }
 
-void GameObject::SetPosition(float x, float y)
+void GameObject::SetPosition(const sf::Vector2f& position)
 {
-	shape.setPosition(sf::Vector2(x, y));
+	shape.setPosition(position);
 }
 
 sf::Vector2f GameObject::GetPosition() const
 {
 	return shape.getPosition();
+}
+
+void GameObject::SetSize(const sf::Vector2f& size)
+{
+	shape.setSize(size);
+}
+
+sf::Vector2f GameObject::GetSize() const
+{
+	return shape.getSize();
+}
+
+void GameObject::SetActive(bool active)
+{
+	this->active = active;
+}
+
+bool GameObject::IsActive() const
+{
+	return active;
 }

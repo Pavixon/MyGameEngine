@@ -1,13 +1,14 @@
 #include "Engine.h"
-#include <memory>
+#include "BasicObject.h"
 
 Engine::Engine()
 	: window(sf::VideoMode({ 1280, 720 }), "Silnik 2D")
 {
-	auto testObject = std::make_shared<GameObject>();
-	testObject->SetPosition(100.f, 100.f);
+	auto object = std::make_shared<BasicObject>();
+	object->SetPosition(sf::Vector2f(100.f, 100.f));
+	object->SetSize(sf::Vector2f(50.f, 50.f));
 
-	objectMenager.AddObject(testObject);
+	objectMenager.AddObject(object);
 }
 
 void Engine::Run()
