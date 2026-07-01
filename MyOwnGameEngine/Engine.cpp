@@ -34,6 +34,8 @@ Engine::Engine()
 
 	//Adding Enemy
 	enemy = std::make_shared<Enemy>(sf::Vector2f(700.f, 300.f));
+	enemy->SetTarget(player);
+	
 	objectManager.AddObject(enemy);
 }
 
@@ -67,6 +69,7 @@ void Engine::Update(float deltaTime)
 {
 	objectManager.Update(deltaTime);
 
+	//Stops player if colliding with wall
 	for (auto& wall : walls)
 	{
 		if (CollisionManager::CheckCollision(*player, *wall))
