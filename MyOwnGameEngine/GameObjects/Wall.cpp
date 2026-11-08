@@ -2,9 +2,9 @@
 
 Wall::Wall(const sf::Vector2f position, const sf::Vector2f& size)
 {
-	shape.setPosition(position);
-	shape.setSize(size);
-	shape.setFillColor(sf::Color::Blue);
+	SetPosition(position);
+	SetSize(size);
+	color = sf::Color::Blue;
 }
 
 void Wall::Update(float deltaTime)
