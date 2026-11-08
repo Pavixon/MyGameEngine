@@ -5,14 +5,14 @@ Player::Player()
 	: speed(200.f),
 	  previousPosition(0.f, 0.f)
 {
-	shape.setSize(sf::Vector2f(50.f, 50.f));
-	shape.setFillColor(sf::Color::Green);
-	shape.setPosition(sf::Vector2f(100.f, 100.f));
+	SetSize(sf::Vector2f(50.f, 50.f));
+	SetPosition(sf::Vector2f(100.f, 100.f));
+	color = sf::Color::Green;
 }
 
 void Player::Update(float deltaTime)
 {
-	previousPosition = shape.getPosition();
+	previousPosition = GetPosition();
 
 	sf::Vector2f movement(0.f, 0.f);
 
@@ -33,10 +33,10 @@ void Player::Update(float deltaTime)
 		movement.x += speed * deltaTime;
 	}
 
-	shape.move(movement);
+	SetPosition(GetPosition() + movement);
 }
 
 void Player::UndoMove()
 {
-	shape.setPosition(previousPosition);
+	SetPosition(previousPosition);
 }
