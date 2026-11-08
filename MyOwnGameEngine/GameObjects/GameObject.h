@@ -9,7 +9,6 @@ public:
 	virtual ~GameObject() = default;
 	
 	virtual void Update(float deltaTime) = 0;
-	virtual void Draw(sf::RenderWindow& window);
 
 	void SetPosition(const sf::Vector2f& position);
 	sf::Vector2f GetPosition() const;
@@ -19,10 +18,14 @@ public:
 
 	sf::FloatRect GetBounds() const;
 
+	sf::Color GetColor() const;
+
 	void SetActive(bool active);
 	bool IsActive() const;
 
 protected:
-	sf::RectangleShape shape;
+	sf::Vector2f position;
+	sf::Vector2f size;
+	sf::Color color;
 	bool active;
 };
