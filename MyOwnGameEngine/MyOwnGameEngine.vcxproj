@@ -145,6 +145,7 @@
     <ClCompile Include="Managers\CollisionManager.cpp" />
     <ClCompile Include="Managers\GameObjectManager.cpp" />
     <ClCompile Include="Managers\InputManager.cpp" />
+    <ClCompile Include="Managers\RenderManager.cpp" />
     <ClCompile Include="Scenes\GameScene.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +161,7 @@
     <ClInclude Include="Managers\CollisionManager.h" />
     <ClInclude Include="Managers\GameObjectManager.h" />
     <ClInclude Include="Managers\InputManager.h" />
+    <ClInclude Include="Managers\RenderManager.h" />
     <ClInclude Include="Scenes\GameScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

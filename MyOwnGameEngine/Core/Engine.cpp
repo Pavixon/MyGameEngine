@@ -42,7 +42,7 @@ void Engine::Render()
 {
 	window.clear(sf::Color::Black);
 
-	sceneManager.Draw(window);
+	sceneManager.Draw(renderManager, window);
 
 	window.display();
 }

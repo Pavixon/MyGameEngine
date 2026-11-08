@@ -15,7 +15,7 @@ public:
 	GameScene();
 
 	void Update(float deltaTime) override;
-	void Draw(sf::RenderWindow& window) override;
+	void Draw(RenderManager& renderManager, sf::RenderWindow& window) override;
 
 private:
 	GameObjectManager objectManager;

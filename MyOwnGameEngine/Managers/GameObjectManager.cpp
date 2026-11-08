@@ -16,10 +16,10 @@ void GameObjectManager::Update(float deltaTime)
 	}
 }
 
-void GameObjectManager::Draw(sf::RenderWindow& window)
+void GameObjectManager::Draw(RenderManager& renderManager, sf::RenderWindow& window)
 {
 	for (auto& object : objects)
 	{
-		object->Draw(window);
+		renderManager.Draw(*object, window);
 	}
 }
