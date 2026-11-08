@@ -4,7 +4,7 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 #include "GameObject.h"
-#include "RenderManager"
+#include "RenderManager.h"
 
 class GameObjectManager
 {
