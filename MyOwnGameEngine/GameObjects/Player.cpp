@@ -16,19 +16,19 @@ void Player::Update(float deltaTime)
 
 	sf::Vector2f movement(0.f, 0.f);
 
-	if (InputManager::IsKeyPressed(sf::Keyboard::Key::W))
+	if (InputManager::IsActionPressed(InputAction::MoveUp))
 	{
 		movement.y -= speed * deltaTime;
 	}
-	if (InputManager::IsKeyPressed(sf::Keyboard::Key::S))
+	if (InputManager::IsActionPressed(InputAction::MoveDown))
 	{
 		movement.y += speed * deltaTime;
 	}
-	if (InputManager::IsKeyPressed(sf::Keyboard::Key::A))
+	if (InputManager::IsActionPressed(InputAction::MoveLeft))
 	{
 		movement.x -= speed * deltaTime;
 	}
-	if (InputManager::IsKeyPressed(sf::Keyboard::Key::D))
+	if (InputManager::IsActionPressed(InputAction::MoveRight))
 	{
 		movement.x += speed * deltaTime;
 	}
