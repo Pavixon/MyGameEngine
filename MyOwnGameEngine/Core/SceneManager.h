@@ -4,12 +4,14 @@
 #include <SFML/Graphics.hpp>
 #include "Scene.h"
 
+class RenderManager;
+
 class SceneManager
 {
 public:
 	void SetScene(std::unique_ptr<Scene> scene);
 	void Update(float deltaTime);
-	void Draw(sf::RenderWindow& window);
+	void Draw(RenderManager& renderManager, sf::RenderWindow& window);
 
 private:
 	std::unique_ptr<Scene> currentScene;

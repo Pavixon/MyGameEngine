@@ -4,6 +4,7 @@
 #include "ResourceManager.h"
 #include "Scene.h"
 #include "SceneManager.h"
+#include "../Managers/RenderManager.h"
 
 
 class Engine
@@ -20,4 +21,5 @@ private:
 	sf::RenderWindow window;
 	ResourceManager resourceManager;
 	SceneManager sceneManager;
+	RenderManager renderManager;
 };

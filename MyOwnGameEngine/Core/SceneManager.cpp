@@ -13,10 +13,10 @@ void SceneManager::Update(float deltaTime)
 	}
 }
 
-void SceneManager::Draw(sf::RenderWindow& window)
+void SceneManager::Draw(RenderManager& renderManager, sf::RenderWindow& window)
 {
 	if (currentScene)
 	{
-		currentScene->Draw(window);
+		currentScene->Draw(renderManager, window);
 	}
 }
