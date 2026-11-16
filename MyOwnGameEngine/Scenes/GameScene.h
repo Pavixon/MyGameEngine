@@ -9,13 +9,14 @@
 #include <memory>
 #include <vector>
 
+
 class GameScene : public Scene
 {
 public:
 	GameScene();
 
 	void Update(float deltaTime) override;
-	void Draw(RenderManager& renderManager, sf::RenderWindow& window) override;
+	void Draw(RenderManager& renderManager, sf::RenderWindow& window, const ResourceManager& resourceManager) override;
 
 private:
 	GameObjectManager objectManager;

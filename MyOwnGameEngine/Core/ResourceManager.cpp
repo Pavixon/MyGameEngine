@@ -1,6 +1,11 @@
 #include "ResourceManager.h"
 #include <iostream>
 
+bool ResourceManager::HasTexture(const std::string& name) const
+{
+	return textures.find(name) != textures.end();
+}
+
 bool ResourceManager::LoadTexture(const std::string& name, const std::string& filePath)
 {
 	sf::Texture texture;

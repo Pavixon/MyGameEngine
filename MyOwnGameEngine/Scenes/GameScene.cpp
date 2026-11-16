@@ -43,8 +43,8 @@ void GameScene::Update(float deltaTime)
 	cameraManager.Follow(player->GetPosition());
 }
 
-void GameScene::Draw(RenderManager& renderManager, sf::RenderWindow& window)
+void GameScene::Draw(RenderManager& renderManager, sf::RenderWindow& window, const ResourceManager& resourceManager)
 {
 	cameraManager.Apply(window);
-	objectManager.Draw(renderManager, window);
+	objectManager.Draw(renderManager, window, resourceManager);
 }

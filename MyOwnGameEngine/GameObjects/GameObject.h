@@ -1,6 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include <string>
 
 class GameObject
 {
@@ -20,6 +21,9 @@ public:
 
 	sf::Color GetColor() const;
 
+	void SetTextureName(const std::string& name);
+	const std::string& GetTextureName() const;
+
 	void SetActive(bool active);
 	bool IsActive() const;
 
@@ -27,5 +31,6 @@ protected:
 	sf::Vector2f position;
 	sf::Vector2f size;
 	sf::Color color;
+	std::string textureName;
 	bool active;
 };

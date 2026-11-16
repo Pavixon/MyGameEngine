@@ -4,6 +4,7 @@ GameObject::GameObject()
 	: position(0.f, 0.f),
 	  size(50.f, 50.f),
 	  color(sf::Color::White),
+	  textureName(""),
 	  active(true)
 {
 }
@@ -36,6 +37,16 @@ sf::FloatRect GameObject::GetBounds() const
 sf::Color GameObject::GetColor() const
 {
 	return color;
+}
+
+void GameObject::SetTextureName(const std::string& name)
+{
+	textureName = name;
+}
+
+const std::string& GameObject::GetTextureName() const
+{
+	return textureName;
 }
 
 void GameObject::SetActive(bool active)
