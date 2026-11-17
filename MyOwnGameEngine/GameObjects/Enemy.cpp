@@ -7,6 +7,7 @@ Enemy::Enemy(const sf::Vector2f& position)
 {
 	SetSize(sf::Vector2f(50.f, 50.f));
 	SetPosition(position);
+	SetTextureName("enemy");
 	color = sf::Color::Red;
 }
 

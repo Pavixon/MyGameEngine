@@ -4,6 +4,8 @@
 Engine::Engine()
 	: window(sf::VideoMode({ 1280, 720 }), "MyOwnGameEngine")
 {
+	resourceManager.LoadTexture("player", "Assets/player.png");
+	resourceManager.LoadTexture("enemy", "Assets/Enemy.png");
 	sceneManager.SetScene(std::make_unique<GameScene>());
 }
 
