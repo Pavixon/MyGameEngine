@@ -3,7 +3,8 @@
 
 Enemy::Enemy(const sf::Vector2f& position)
 	: speed(100.f),
-	  target(nullptr)
+	  target(nullptr),
+	  previousPosition(position)
 {
 	SetSize(sf::Vector2f(50.f, 50.f));
 	SetPosition(position);
@@ -35,4 +36,9 @@ void Enemy::Update(float deltaTime)
 void Enemy::SetTarget(std::shared_ptr<GameObject> target)
 {
 	this->target = target;
+}
+
+void Enemy::UndoMove()
+{
+	SetPosition(previousPosition);
 }

@@ -36,7 +36,11 @@ void GameScene::Update(float deltaTime)
 		if (CollisionManager::CheckCollision(*player, *wall))
 		{
 			player->UndoMove();
-			break;
+		}
+
+		if (CollisionManager::CheckCollision(*enemy, *wall))
+		{
+			enemy->UndoMove();
 		}
 	}
 

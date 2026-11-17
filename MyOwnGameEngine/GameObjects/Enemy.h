@@ -10,8 +10,10 @@ public:
 
 	void Update(float deltaTime) override;
 	void SetTarget(std::shared_ptr<GameObject> target);
+	void UndoMove();
 
 private:
 	float speed;
 	std::shared_ptr<GameObject> target;
+	sf::Vector2f previousPosition;
 };
