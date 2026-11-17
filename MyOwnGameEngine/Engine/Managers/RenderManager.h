@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "../GameObjects/GameObject.h"
+#include "../Core/GameObject.h"
 #include "ResourceManager.h"
 
 class RenderManager

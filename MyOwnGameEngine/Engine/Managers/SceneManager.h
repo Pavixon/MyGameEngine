@@ -2,9 +2,9 @@
 
 #include <memory>
 #include <SFML/Graphics.hpp>
-#include "Scene.h"
+#include "../Core/Scene.h"
 #include "ResourceManager.h"
-#include "RenderManager.h"
+#include "../Managers/RenderManager.h"
 
 class SceneManager
 {

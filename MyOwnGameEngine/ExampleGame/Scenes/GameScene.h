@@ -1,11 +1,11 @@
 #pragma once
 
-#include "Scene.h"
-#include "GameObjectManager.h"
-#include "Player.h"
-#include "Enemy.h"
-#include "Wall.h"
-#include "CameraManager.h"
+#include "../../Engine/Core/Scene.h"
+#include "../../Engine/Managers/GameObjectManager.h"
+#include "../GameObjects/Player.h"
+#include "../GameObjects/Enemy.h"
+#include "../GameObjects/Wall.h"
+#include "../../Engine/Managers/CameraManager.h"
 #include <memory>
 #include <vector>
 

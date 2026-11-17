@@ -12,7 +12,7 @@ bool ResourceManager::LoadTexture(const std::string& name, const std::string& fi
 
 	if (!texture.loadFromFile(filePath))
 	{
-		std::cout << "Nie udalo sie zaladowac tekstury" << filePath << std::endl;
+		std::cout << "No Texture" << filePath << std::endl;
 		return false;
 	}
 	textures[name] = std::move(texture);

@@ -1,8 +1,8 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
-#include "ResourceManager.h"
-#include "RenderManager.h"
+#include "../Managers/ResourceManager.h"
+#include "../Managers/RenderManager.h"
 
 class Scene
 {

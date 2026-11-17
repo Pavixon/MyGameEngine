@@ -1,5 +1,5 @@
 #include "GameScene.h"
-#include "CollisionManager.h"
+#include "../../Engine/Managers/CollisionManager.h"
 
 GameScene::GameScene()
 	:cameraManager(sf::Vector2f(1280.f, 720.f))

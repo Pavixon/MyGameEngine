@@ -1,9 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <memory>
-#include "ResourceManager.h"
+#include "../Managers/ResourceManager.h"
 #include "Scene.h"
-#include "SceneManager.h"
+#include "../Managers/SceneManager.h"
 #include "../Managers/RenderManager.h"
 
 

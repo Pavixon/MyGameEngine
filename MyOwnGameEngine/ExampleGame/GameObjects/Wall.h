@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GameObject.h"
+#include "../../Engine/Core/GameObject.h"
 
 class Wall : public GameObject
 {

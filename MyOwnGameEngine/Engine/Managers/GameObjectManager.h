@@ -2,9 +2,9 @@
 
 #include <vector>
 #include <memory>
-#include "GameObject.h"
+#include "../Core/GameObject.h"
 #include "RenderManager.h"
-#include "../Core/ResourceManager.h"
+#include "ResourceManager.h"
 
 class GameObjectManager
 {

@@ -1,5 +1,5 @@
 #include "Player.h"
-#include "InputManager.h"
+#include "../../Engine/Managers/InputManager.h"
 
 Player::Player()
 	: speed(200.f),
