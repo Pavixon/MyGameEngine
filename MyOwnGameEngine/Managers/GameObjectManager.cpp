@@ -1,6 +1,5 @@
 #include "GameObjectManager.h"
 
-class ResourceManager;
 
 void GameObjectManager::AddObject(std::shared_ptr<GameObject> object)
 {
