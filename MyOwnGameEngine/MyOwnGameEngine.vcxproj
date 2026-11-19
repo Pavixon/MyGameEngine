@@ -140,12 +140,14 @@
     <ClCompile Include="Engine\Managers\ResourceManager.cpp" />
     <ClCompile Include="Engine\Managers\SceneManager.cpp" />
     <ClCompile Include="Engine\Core\GameObject.cpp" />
+    <ClCompile Include="ExampleGame\GameObjects\Player.cpp" />
     <ClCompile Include="ExampleGame\main.cpp" />
     <ClCompile Include="Engine\Managers\CameraManager.cpp" />
     <ClCompile Include="Engine\Managers\CollisionManager.cpp" />
     <ClCompile Include="Engine\Managers\GameObjectManager.cpp" />
     <ClCompile Include="Engine\Managers\InputManager.cpp" />
     <ClCompile Include="Engine\Managers\RenderManager.cpp" />
+    <ClCompile Include="ExampleGame\Scenes\SampleScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Core\Engine.h" />
@@ -158,6 +160,8 @@
     <ClInclude Include="Engine\Managers\GameObjectManager.h" />
     <ClInclude Include="Engine\Managers\InputManager.h" />
     <ClInclude Include="Engine\Managers\RenderManager.h" />
+    <ClInclude Include="ExampleGame\GameObjects\Player.h" />
+    <ClInclude Include="ExampleGame\Scenes\SampleScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
