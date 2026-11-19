@@ -12,6 +12,7 @@ class Engine
 public:
 	Engine();
 	void Run();
+	void SetScene(std::unique_ptr<Scene> scene);
 
 private:
 	void ProcessEvents();

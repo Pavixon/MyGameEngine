@@ -38,6 +38,11 @@ void Engine::Update(float deltaTime)
 	sceneManager.Update(deltaTime);
 }
 
+void Engine::SetScene(std::unique_ptr<Scene> scene)
+{
+	sceneManager.SetScene(std::move(scene));
+}
+
 void Engine::Render()
 {
 	window.clear(sf::Color::Black);
