@@ -45,10 +45,7 @@
     <ClCompile Include="Engine\Managers\RenderManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ExampleGame\Scenes\GameScene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ExampleGame\GameObjects\Player.cpp">
+    <ClCompile Include="ExampleGame\Scenes\SampleScene.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,10 +80,7 @@
     <ClInclude Include="Engine\Managers\RenderManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ExampleGame\Scenes\GameScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ExampleGame\GameObjects\Player.h">
+    <ClInclude Include="ExampleGame\Scenes\SampleScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
