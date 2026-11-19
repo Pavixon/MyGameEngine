@@ -1,15 +1,11 @@
 #pragma once
 
-enum class InputAction
-{
-	MoveUp,
-	MoveDown,
-	MoveLeft,
-	MoveRight
-};
+#include <SFML/Window/Keyboard.hpp>
+#include <SFML/Window/Mouse.hpp>
 
 class InputManager
 {
 public:
-	static bool IsActionPressed(InputAction action);
+	static bool IsKeyPressed(sf::Keyboard::Key key);
+	static bool IsMaousePressed(sf::Mouse::Button button);
 };
