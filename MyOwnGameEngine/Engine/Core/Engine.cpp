@@ -1,10 +1,14 @@
 #include "Engine.h"
 
-Engine::Engine()
-	: window(sf::VideoMode({ 1280, 720 }), "MyOwnGameEngine")
+Engine::Engine(const sf::Vector2u& windowSize, const std::string& windowTitle, ResourceManager& resourceManager)
+	: window(sf::VideoMode(windowSize), windowTitle),
+	  resourceManager(resourceManager)
 {
-	resourceManager.LoadTexture("player", "ExampleGame/Assets/player.png");
-	resourceManager.LoadTexture("enemy", "ExampleGame/Assets/Enemy.png");
+}
+
+void Engine::SetScene(std::unique_ptr<Scene> scene)
+{
+	sceneManager.SetScene(std::move(scene));
 }
 
 void Engine::Run()
@@ -36,11 +40,6 @@ void Engine::ProcessEvents()
 void Engine::Update(float deltaTime)
 {
 	sceneManager.Update(deltaTime);
-}
-
-void Engine::SetScene(std::unique_ptr<Scene> scene)
-{
-	sceneManager.SetScene(std::move(scene));
 }
 
 void Engine::Render()

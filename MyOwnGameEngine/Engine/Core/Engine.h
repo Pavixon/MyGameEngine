@@ -10,7 +10,7 @@
 class Engine
 {
 public:
-	Engine();
+	Engine(const sf::Vector2u& windowSize, const std::string& windowTitle, ResourceManager& resourceManager);
 	void Run();
 	void SetScene(std::unique_ptr<Scene> scene);
 
@@ -20,7 +20,7 @@ private:
 	void Render();
 
 	sf::RenderWindow window;
-	ResourceManager resourceManager;
+	ResourceManager& resourceManager;
 	SceneManager sceneManager;
 	RenderManager renderManager;
 };
