@@ -1,4 +1,5 @@
 #include "GameObjectManager.h"
+#include "CollisionManager.h"
 
 
 void GameObjectManager::AddObject(std::shared_ptr<GameObject> object)
@@ -12,7 +13,9 @@ void GameObjectManager::Update(float deltaTime)
 	{
 		if (object->IsActive())
 		{
+			sf::Vector2f previousPosition = object->GetPosition();
 			object->Update(deltaTime);
+			CollisionManager::ResolveMovement(*object, previousPosition, objects);
 		}
 	}
 }
@@ -21,6 +24,9 @@ void GameObjectManager::Draw(RenderManager& renderManager, sf::RenderWindow& win
 {
 	for (auto& object : objects)
 	{
-		renderManager.Draw(*object, window, resourceManager);
+		if (object->IsActive())
+		{
+			renderManager.Draw(*object, window, resourceManager);
+		}
 	}
 }
