@@ -1,5 +1,7 @@
 #include "SampleScene.h"
 #include "../GameObjects/Wall.h"
+#include <cmath>
+#include <limits>
 
 SampleScene::SampleScene()
 	: cameraManager(sf::Vector2f(1280.f, 720.f)),
@@ -31,11 +33,39 @@ void SampleScene::Update(float deltaTime)
 		spawnTimer -= spawnRate;
 	}
 
+	Enemy* nearestEnemy = nullptr;
+	float nearestDistance = 150.f;
+
+	for (const auto& enemy : enemies)
+	{
+		if (!enemy || !enemy->IsActive()) continue;
+
+		sf::Vector2f difference = enemy->GetPosition() - player->GetPosition();
+		float distance = std::sqrt(difference.x * difference.x + difference.y * difference.y);
+
+		if (distance <= nearestDistance)
+		{
+			nearestDistance = distance;
+			nearestEnemy = enemy.get();
+		}
+	}
+	player->SetTargetEnemy(nearestEnemy);
+
 	gameObjectManager.Update(deltaTime);
 }
 
 void SampleScene::Draw(RenderManager& renderManager, sf::RenderWindow& window, const ResourceManager& resourceManager)
 {
 	cameraManager.Apply(window);
+	sf::CircleShape attackRadius(150.f);
+	attackRadius.setOrigin({ 150.f, 150.f });
+	attackRadius.setPosition(
+		player->GetPosition() + player->GetSize() / 2.f
+	);
+	attackRadius.setFillColor(sf::Color(255, 0, 0, 30));
+	attackRadius.setOutlineColor(sf::Color(255, 0, 0, 120));
+	attackRadius.setOutlineThickness(2.f);
+
+	window.draw(attackRadius);
 	gameObjectManager.Draw(renderManager, window, resourceManager);
 }

@@ -10,7 +10,10 @@ public:
 	
 	void Update(float deltaTime) override;
 
+	void TakeDamage(int damage);
+
 private:
 	Player& target;
 	float movementSpeed;
+	int health;
 };

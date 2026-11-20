@@ -1,13 +1,23 @@
 #include "Player.h"
+#include "Enemy.h"
 #include "../../Engine/Managers/InputManager.h"
 #include <cmath>
 
 Player::Player()
-	:movementSpeed(200.f)
+	:movementSpeed(200.f),
+	 targetEnemy(nullptr),
+	 attackTimer(0.f),
+	 attackRate(1.f),
+	 attackDamage(1)
 {
 	SetPosition(sf::Vector2f(100.f, 100.f));
 	SetSize(sf::Vector2f(32.f, 32.f));
 	SetTextureName("player");
+}
+
+void Player::SetTargetEnemy(Enemy* enemy)
+{
+	targetEnemy = enemy;
 }
 
 void Player::Update(float deltaTime)
@@ -37,4 +47,18 @@ void Player::Update(float deltaTime)
 	}
 
 	position += movement * movementSpeed * deltaTime;
+
+	if (targetEnemy == nullptr || !targetEnemy->IsActive())
+	{
+		return;
+	}
+
+	attackTimer += deltaTime;
+
+	if (attackTimer >= attackRate)
+	{
+		attackTimer -= attackRate;
+		targetEnemy->TakeDamage(attackDamage);
+	}
 }
+
