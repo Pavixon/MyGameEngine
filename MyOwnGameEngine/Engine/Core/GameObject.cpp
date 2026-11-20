@@ -6,7 +6,7 @@ GameObject::GameObject()
 	  color(sf::Color::White),
 	  textureName(""),
 	  active(true),
-	  blocksMovement("false")
+	  blocksMovement(false)
 {
 }
 
