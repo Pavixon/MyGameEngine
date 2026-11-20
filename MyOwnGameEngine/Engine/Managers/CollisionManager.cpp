@@ -16,7 +16,7 @@ void CollisionManager::ResolveMovement(GameObject& object, const sf::Vector2f& p
 
 		if (CheckCollision(object, *other))
 		{
-			object.SetPosition(sf::Vector2f(object.GetPosition().x, previousPosition.y));
+			object.SetPosition(sf::Vector2f(previousPosition.x, previousPosition.y));
 			break;
 		}
 	}
