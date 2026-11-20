@@ -3,6 +3,7 @@
 #include "../../Engine/Core/Scene.h"
 #include "../../Engine/Managers/GameObjectManager.h"
 #include "../../Engine/Managers/CameraManager.h"
+#include "../GameObjects/Player.h"
 
 class SampleScene : public Scene
 {

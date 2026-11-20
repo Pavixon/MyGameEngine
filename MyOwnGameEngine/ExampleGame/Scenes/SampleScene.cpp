@@ -3,7 +3,7 @@
 SampleScene::SampleScene()
 	: cameraManager(sf::Vector2f(1280.f, 720.f))
 {
-
+	gameObjectManager.AddObject(std::make_shared<Player>());
 }
 
 void SampleScene::Update(float deltaTime)
