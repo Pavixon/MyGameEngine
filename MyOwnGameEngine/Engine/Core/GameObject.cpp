@@ -5,7 +5,8 @@ GameObject::GameObject()
 	  size(50.f, 50.f),
 	  color(sf::Color::White),
 	  textureName(""),
-	  active(true)
+	  active(true),
+	  blocksMovement("false")
 {
 }
 
@@ -57,4 +58,9 @@ void GameObject::SetActive(bool active)
 bool GameObject::IsActive() const
 {
 	return active;
+}
+
+bool GameObject::BlockMovement() const
+{
+	return blocksMovement;
 }
