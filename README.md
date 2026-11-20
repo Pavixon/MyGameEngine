@@ -26,26 +26,39 @@ Głównym celem projektu jest stworzenie podstawowej architektury silnika umożl
 * **ResourceManager** – zarządzanie zasobami.
 * **GameObject** – podstawowa klasa obiektów występujących w grze.
 
-## Wymagania
+## Kompilacja i uruchomienie projektu
+### Wymagania
+* Windows 10 lub Windows 11
+* Visual Studio 2022
+* Zainstalowany pakiet Desktop development with C++
 
-Do uruchomienia gotowej wersji projektu wymagane są:
+### Przygotowanie projektu
 
-* System operacyjny Windows.
+1. Sklonuj repozytorium lub pobierz je jako archiwum ZIP.
+2. Otwórz plik MyOwnGameEngine.sln w Visual Studio.
+3. Upewnij się, że wybrana konfiguracja kompilacji to **Release x64**.
 
-## Uruchomienie
+### Kompilacja
 
-1. Pobierz repozytorium lub paczkę z gotowym buildem.
-2. Przejdź do katalogu x64/Release.
-3. Uruchom plik MyOwnGameEngine.exe.
+1. W Visual Studio wybierz Build → Build Solution lub użyj skrótu Ctrl + Shift + B.
+2. Poczekaj na zakończenie kompilacji.
 
-Biblioteki DLL wymagane przez program powinny znajdować się w tym samym katalogu co plik wykonywalny.
+### Uruchomienie
+
+Po poprawnej kompilacji uruchom wygenerowany plik wykonywalny .exe.
+
+Uwaga: Biblioteka SFML jest dołączona do repozytorium, dlatego nie wymaga osobnej instalacji.
 
 ## Struktura projektu
 
-* **Core** – podstawowe elementy silnika.
-* **GameObjects** – klasy obiektów gry.
-* **Managers** – systemy zarządzające poszczególnymi funkcjonalnościami.
-* **Scenes** – definicje scen.
+Projekt składa się z dwóch głównych części: silnika gier oraz aplikacji demonstracyjnej wykorzystującej jego funkcjonalności.
+### Engine
+* Core – podstawowe elementy silnika, odpowiedzialne za jego działanie i zarządzanie cyklem gry.
+* Managers – systemy zarządzające poszczególnymi funkcjonalnościami silnika.
+### ExampleGame
+* GameObjects – obiekty i klasy implementujące mechaniki prototypowej gry.
+* Scenes – sceny aplikacji demonstracyjnej.
+* Assets -Zasoby wykorzystywane przez projekt, takie jak tekstury i grafiki.
 
 ## Autor
 
