@@ -140,6 +140,7 @@
     <ClCompile Include="Engine\Managers\ResourceManager.cpp" />
     <ClCompile Include="Engine\Managers\SceneManager.cpp" />
     <ClCompile Include="Engine\Core\GameObject.cpp" />
+    <ClCompile Include="ExampleGame\GameObjects\Enemy.cpp" />
     <ClCompile Include="ExampleGame\GameObjects\Player.cpp" />
     <ClCompile Include="ExampleGame\GameObjects\Wall.cpp" />
     <ClCompile Include="ExampleGame\main.cpp" />
@@ -161,6 +162,7 @@
     <ClInclude Include="Engine\Managers\GameObjectManager.h" />
     <ClInclude Include="Engine\Managers\InputManager.h" />
     <ClInclude Include="Engine\Managers\RenderManager.h" />
+    <ClInclude Include="ExampleGame\GameObjects\Enemy.h" />
     <ClInclude Include="ExampleGame\GameObjects\Player.h" />
     <ClInclude Include="ExampleGame\GameObjects\Wall.h" />
     <ClInclude Include="ExampleGame\Scenes\SampleScene.h" />
