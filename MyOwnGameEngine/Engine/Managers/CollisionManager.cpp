@@ -20,4 +20,18 @@ void CollisionManager::ResolveMovement(GameObject& object, const sf::Vector2f& p
 			break;
 		}
 	}
+
+	object.SetPosition(sf::Vector2f(object.GetPosition().x, currentPosition.y));
+
+	for (const auto& other : objects)
+	{
+		if (other.get() == &object || !other->IsActive() || !other->BlockMovement())
+			continue;
+
+		if (CheckCollision(object, *other))
+		{
+			object.SetPosition(sf::Vector2f(object.GetPosition().x, previousPosition.y));
+			break;
+		}
+	}
 }
