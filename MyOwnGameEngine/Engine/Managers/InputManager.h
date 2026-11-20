@@ -7,5 +7,5 @@ class InputManager
 {
 public:
 	static bool IsKeyPressed(sf::Keyboard::Key key);
-	static bool IsMaousePressed(sf::Mouse::Button button);
+	static bool IsMousePressed(sf::Mouse::Button button);
 };
