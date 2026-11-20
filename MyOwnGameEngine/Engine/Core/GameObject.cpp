@@ -60,6 +60,11 @@ bool GameObject::IsActive() const
 	return active;
 }
 
+void GameObject::SetBlockMovement(bool blocks)
+{
+	blocksMovement = blocks;
+}
+
 bool GameObject::BlockMovement() const
 {
 	return blocksMovement;
