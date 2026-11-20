@@ -27,10 +27,14 @@ public:
 	void SetActive(bool active);
 	bool IsActive() const;
 
+	void SetBlockMovement(bool blocks);
+	bool BlockMovement() const;
+
 protected:
 	sf::Vector2f position;
 	sf::Vector2f size;
 	sf::Color color;
 	std::string textureName;
 	bool active;
+	bool blocksMovement;
 };
