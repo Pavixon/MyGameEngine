@@ -1,7 +1,7 @@
 #include "Engine.h"
 
 Engine::Engine(const sf::Vector2u& windowSize, const std::string& windowTitle, ResourceManager& resourceManager)
-	: window(sf::VideoMode(windowSize), windowTitle),
+	: window(sf::VideoMode(windowSize), windowTitle, sf::Style::Titlebar | sf::Style::Close),
 	  resourceManager(resourceManager)
 {
 }
@@ -27,12 +27,19 @@ void Engine::Run()
 
 void Engine::ProcessEvents()
 {
-
 	while (const std::optional event = window.pollEvent())
 	{
 		if (event->is<sf::Event::Closed>())
 		{
 			window.close();
+		}
+
+		if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>())
+		{
+			if (keyPressed->code == sf::Keyboard::Key::Escape)
+			{
+				window.close();
+			}
 		}
 	}
 }
