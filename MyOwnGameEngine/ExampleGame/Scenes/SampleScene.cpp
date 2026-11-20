@@ -14,9 +14,9 @@ SampleScene::SampleScene()
 	gameObjectManager.AddObject(player);
 	enemies.push_back(enemy);
 	gameObjectManager.AddObject(enemy);
-	gameObjectManager.AddObject(std::make_shared<Wall>(sf::Vector2f(300.f, 200.f), sf::Vector2f(200.f, 50.f)));
-	gameObjectManager.AddObject(std::make_shared<Wall>(sf::Vector2f(500.f, 400.f), sf::Vector2f(50.f, 200.f)));
-	gameObjectManager.AddObject(std::make_shared<Wall>(sf::Vector2f(700.f, 150.f), sf::Vector2f(200.f, 50.f)));
+	gameObjectManager.AddObject(std::make_shared<Wall>(sf::Vector2f(400.f, 200.f), sf::Vector2f(200.f, 50.f)));
+	gameObjectManager.AddObject(std::make_shared<Wall>(sf::Vector2f(600.f, 400.f), sf::Vector2f(50.f, 200.f)));
+	gameObjectManager.AddObject(std::make_shared<Wall>(sf::Vector2f(800.f, 150.f), sf::Vector2f(200.f, 50.f)));
 }
 
 void SampleScene::Update(float deltaTime)

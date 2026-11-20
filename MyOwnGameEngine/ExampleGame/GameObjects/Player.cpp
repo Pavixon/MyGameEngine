@@ -62,6 +62,24 @@ void Player::Update(float deltaTime)
 		movement /= std::sqrt(movement.x * movement.x + movement.y * movement.y);
 	}
 
+	if (position.x + size.x < 0.f)
+	{
+		position.x = 1280.f;
+	}
+	else if (position.x > 1280.f)
+	{
+		position.x = -size.x;
+	}
+
+	if (position.y + size.y < 0.f)
+	{
+		position.y = 720.f;
+	}
+	else if (position.y > 720.f)
+	{
+		position.y = -size.y;
+	}
+
 	position += movement * movementSpeed * deltaTime;
 
 	if (targetEnemies.empty())
