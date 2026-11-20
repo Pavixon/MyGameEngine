@@ -1,6 +1,7 @@
 #pragma once
 
 #include "../../Engine/Core/GameObject.h"
+#include <vector>
 
 class Enemy;
 
@@ -11,12 +12,15 @@ public:
 
 	void Update(float deltaTime) override;
 
-	void SetTargetEnemy(Enemy* enemy);
+	void SetTargetEnemies(const std::vector<Enemy*>& enemies);
+	bool IsAttacking() const;
 
 private:
 	float movementSpeed;
-	Enemy* targetEnemy;
+	std::vector<Enemy*> targetEnemies;
 	float attackTimer;
 	float attackRate;
 	int attackDamage;
+	float attackVisualTimer;
+	float attackVisualDuration;
 };

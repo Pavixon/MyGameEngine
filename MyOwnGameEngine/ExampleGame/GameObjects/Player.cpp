@@ -5,23 +5,39 @@
 
 Player::Player()
 	:movementSpeed(200.f),
-	 targetEnemy(nullptr),
 	 attackTimer(0.f),
 	 attackRate(1.f),
-	 attackDamage(1)
+	 attackDamage(1),
+	 attackVisualTimer(0.f),
+	 attackVisualDuration(0.2f)
 {
 	SetPosition(sf::Vector2f(100.f, 100.f));
 	SetSize(sf::Vector2f(32.f, 32.f));
 	SetTextureName("player");
 }
 
-void Player::SetTargetEnemy(Enemy* enemy)
+void Player::SetTargetEnemies(const std::vector<Enemy*>& enemies)
 {
-	targetEnemy = enemy;
+	targetEnemies = enemies;
+}
+
+bool Player::IsAttacking() const
+{
+	return attackVisualTimer > 0.f;
 }
 
 void Player::Update(float deltaTime)
 {
+	if (attackVisualTimer > 0.f)
+	{
+		attackVisualTimer -= deltaTime;
+
+		if (attackVisualTimer < 0.f)
+		{
+			attackVisualTimer = 0.f;
+		}
+	}
+
 	sf::Vector2f movement(0.f, 0.f);
 
 	if (InputManager::IsKeyPressed(sf::Keyboard::Key::W))
@@ -48,7 +64,7 @@ void Player::Update(float deltaTime)
 
 	position += movement * movementSpeed * deltaTime;
 
-	if (targetEnemy == nullptr || !targetEnemy->IsActive())
+	if (targetEnemies.empty())
 	{
 		return;
 	}
@@ -58,7 +74,15 @@ void Player::Update(float deltaTime)
 	if (attackTimer >= attackRate)
 	{
 		attackTimer -= attackRate;
-		targetEnemy->TakeDamage(attackDamage);
+
+		for (Enemy* enemy : targetEnemies)
+		{
+			if (enemy != nullptr && enemy->IsActive())
+			{
+				enemy->TakeDamage(attackDamage);
+			}
+		}
+		attackVisualTimer = attackVisualDuration;
 	}
 }
 
